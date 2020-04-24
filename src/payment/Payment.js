@@ -64,7 +64,7 @@ class Payment extends Component {
        * RevOps API Sandbox Key
        * find me at https://<your_instance>.revops.io/integrations/api/key
        */
-      publicKey = "",
+      publicKey = "pk_sandbox_5f6b5b57b4a14934bd7f979588739420",
 
       /*
        * Your Customer's Account ID,
