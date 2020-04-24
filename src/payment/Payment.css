@@ -1,6 +1,7 @@
+.payment__message,
 .payment__btn--wrapper {
   width: 404px;
-  margin: auto;
+  margin: 1em auto !important;
 }
 
 .payment__btn {

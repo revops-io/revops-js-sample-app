@@ -13,7 +13,7 @@ export const Navigation = ({
     <div className="nav__buttons">
       {last && (
         <Button size="small" as={Link} to={last}>
-          Last
+          Previous
         </Button>
       )}
       {next && (

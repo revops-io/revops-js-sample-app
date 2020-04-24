@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Header, Container, Button, Form } from "semantic-ui-react";
+import { Container, Button, Form } from "semantic-ui-react";
 
 import { Link } from "react-router-dom";
 
@@ -11,9 +11,9 @@ export const HomePage = () => {
   return (
     <div className="home">
       <Container text>
-        <Header as="h1" className="home__header">
-          RevOps
-        </Header>
+        <h1 className="home__header">
+          {process.env.COMPANY_NAME}
+        </h1>
         <p>
           Increase velocity and transparency for every market segment with
           real-time pricing, flexible approvals, and automated billing.

@@ -11,6 +11,11 @@ export const TermsOfService = () => {
   const [isChecked, setIsChecked] = useState(false);
   return (
     <Container className="terms">
+      <p className="terms__text">
+        This Service Level Agreement (the “SLA”) is expressly incorporated into
+        the SaaS Services Agreement (the “Agreement”) under which Company has
+        licensed to Customer the Services.
+      </p>
       <Markdown
         className="terms__md-editor"
         source={TERMS_OF_SEVICE}
@@ -23,9 +28,15 @@ export const TermsOfService = () => {
       />
       <div className="terms__buttons">
         <Button size="small" as={Link} to="/">
-          Last
+          Previous
         </Button>
-        <Button primary small="small" as={Link} to="/payment" disabled={!isChecked}>
+        <Button
+          primary
+          small="small"
+          as={Link}
+          to="/payment"
+          disabled={!isChecked}
+        >
           Next
         </Button>
       </div>

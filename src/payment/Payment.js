@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { PaymentMethod } from "revops-js";
+import "dotenv/config";
 
-import { Button, Loader, Dimmer, Segment } from "semantic-ui-react";
+import { Button, Loader, Dimmer, Segment, Message } from "semantic-ui-react";
 
 import "revops-js/themes/defaultStyles.css";
 import "./Payment.css";
@@ -27,7 +28,7 @@ class Payment extends Component {
 
   submitSecure = () => {
     // tell the revops form to submit itself
-    if (!!this.saveRef === true) {
+    if (!!this.saveRef === true && !!this.props.publicKey !== false) {
       this.setState({ buttonMessage: "Saving", isButtonDisabled: true });
       this.saveRef.current.onSubmit();
     }
@@ -63,7 +64,7 @@ class Payment extends Component {
        * RevOps API Sandbox Key
        * find me at https://<your_instance>.revops.io/integrations/api/key
        */
-      publicKey = "pk_sandbox_<YOUR_KEY>",
+      publicKey = "",
 
       /*
        * Your Customer's Account ID,
@@ -79,12 +80,22 @@ class Payment extends Component {
 
     return (
       <div id="revops-example">
+        {!!publicKey === false && (
+          <Message negative className="payment__message">
+            <Message.Header>No API KEY</Message.Header>
+            <p>
+              {
+                "Add your API key to the Payment component."
+              }
+            </p>
+          </Message>
+        )}
         <PaymentMethod
           loadingState={
             // customize the loading message
             <Segment placeholder basic>
               <Dimmer active inverted>
-                <Loader inverted>Creating a secure connection.</Loader>
+                <Loader inverted>Establishing a secure connection.</Loader>
               </Dimmer>
             </Segment>
           }
@@ -124,7 +135,7 @@ class Payment extends Component {
                 small="small"
                 className="payment__btn"
                 disabled={isButtonDisabled}
-                content="Last"
+                content="Previous"
               />
               <Button
                 primary

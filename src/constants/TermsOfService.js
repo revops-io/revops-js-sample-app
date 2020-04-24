@@ -1,7 +1,5 @@
 
 export const TERMS_OF_SEVICE = `
-This Service Level Agreement (the “SLA”) is expressly incorporated into the SaaS Services Agreement (the “Agreement”) under which
-Company has licensed to Customer the Services.
 
 # 1. Service Level Commitment
 

@@ -9,10 +9,10 @@ td, th {
 
 .terms__md-editor {
   margin-top: 2em;
-  height: 75vh;
-  overflow-y: scroll;
 }
-
+.terms__text {
+  font-weight: 700;
+}
 .terms__checkbox {
   margin: 1em;
   width: 100%;
