@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <header className="App-header">
-          The<pre>{` revops.js `}</pre> sample application.
+          <pre>{` revops.js `}</pre> sample application
         </header>
         <div className="content-main">
           <Route path="/" exact component={LandingPage} />
