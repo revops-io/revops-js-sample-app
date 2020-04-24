@@ -1,0 +1,12 @@
+.nav__buttons {
+  justify-content: center;
+  position: fixed;
+  bottom: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__buttons .button {
+  width: 25%;
+}

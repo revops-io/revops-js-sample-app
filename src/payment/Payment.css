@@ -1,0 +1,13 @@
+.payment__btn--wrapper {
+  width: 404px;
+  margin: auto;
+}
+
+.payment__btn {
+  width: 49%;
+}
+
+.cc-label,
+.ach-label {
+  font-size: 200%;
+}

@@ -1,0 +1,31 @@
+.terms {
+  text-align: left;
+}
+
+td, th {
+  border: 1px solid;
+  padding: 0.5em;
+}
+
+.terms__md-editor {
+  margin-top: 2em;
+  height: 75vh;
+  overflow-y: scroll;
+}
+
+.terms__checkbox {
+  margin: 1em;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+
+.terms__buttons {
+  display: flex !important;
+  justify-content: center;
+  margin: 1em;
+}
+
+.terms__buttons .button{
+  width: 25%;
+}
