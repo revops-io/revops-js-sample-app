@@ -28,7 +28,7 @@ class Payment extends Component {
 
   submitSecure = () => {
     // tell the revops form to submit itself
-    if (!!this.saveRef === true && !!this.props.publicKey !== false) {
+    if (!!this.saveRef === true) {
       this.setState({ buttonMessage: "Saving", isButtonDisabled: true });
       this.saveRef.current.onSubmit();
     }
@@ -83,11 +83,7 @@ class Payment extends Component {
         {!!publicKey === false && (
           <Message negative className="payment__message">
             <Message.Header>No API KEY</Message.Header>
-            <p>
-              {
-                "Add your API key to the Payment component."
-              }
-            </p>
+            <p>{"Add your API key to the Payment component."}</p>
           </Message>
         )}
         <PaymentMethod
@@ -126,6 +122,13 @@ class Payment extends Component {
           onError={(error) => console.log(error)}
           onLoad={this.handleLoading}
         />
+        {loaded && (
+          <Message className="payment__message">
+            <a href="https://stripe.com/docs/testing">
+              Find more test cards and accounts.
+            </a>
+          </Message>
+        )}
         <div className="payment__btn--wrapper">
           {loaded && (
             <>
